@@ -29,6 +29,10 @@ module LinkedIn
             path +=":(#{fields.map{ |f| f.to_s.gsub("_","-") }.join(',')})"
           end
 
+          if options[:modified] and options[:modified_since]
+            path += "?modified=#{options[:modified]}&modified-since=#{options[:modified_since]}"
+          end
+
           Mash.from_json(get(path))
         end
 
