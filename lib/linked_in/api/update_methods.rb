@@ -2,6 +2,8 @@ module LinkedIn
   module Api
 
     module UpdateMethods
+      
+      include Helpers::Request
 
       # def update_status(text)
       #   path = "/people/~/current-status"
@@ -68,8 +70,7 @@ module LinkedIn
       end
 
       def post(path, body='', options={})
-        path = "/v1#{path}"
-        response = access_token.post(path, body, options)
+        response = access_token.post("#{API_PATH}#{path}", body, options)
         raise_errors(response)
         response
       end

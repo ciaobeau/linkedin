@@ -39,7 +39,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<oauth>,       ["~> 0.4.0"])
       s.add_dependency(%q<hashie>,      ["~> 1.0.0"])
-      s.add_dependency(%q<multi_json>,  ["~> 0.0.5"])
+      s.add_dependency(%q<multi_json>,  ["~> 1.0.0"])
       s.add_dependency(%q<yajl-ruby>,   ["~> 0.8.0"])
       s.add_dependency(%q<rspec>,       ["~> 2.4.0"])
       s.add_dependency(%q<rake>,        ["~> 0.8.7"])
@@ -49,7 +49,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<oauth>,       ["~> 0.4.0"])
     s.add_dependency(%q<hashie>,      ["~> 1.0.0"])
-    s.add_dependency(%q<multi_json>,  ["~> 0.0.5"])
+    s.add_dependency(%q<multi_json>,  ["~> 1.0.0"])
     s.add_dependency(%q<yajl-ruby>,   ["~> 0.8.0"])
     s.add_dependency(%q<rspec>,       ["~> 2.4.0"])
     s.add_dependency(%q<rake>,        ["~> 0.8.7"])
