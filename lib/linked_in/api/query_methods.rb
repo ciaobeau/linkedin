@@ -38,7 +38,15 @@ module LinkedIn
           params  = options.map { |k,v| "#{k}=#{v}" }.join("&")
           path   += "?#{params}" if not params.empty?
 
+<<<<<<< HEAD
           Mash.from_json(get(path, headers))
+=======
+          if options[:modified] and options[:modified_since]
+            path += "?modified=#{options[:modified]}&modified-since=#{options[:modified_since]}"
+          end
+
+          Mash.from_json(get(path))
+>>>>>>> upstream/master
         end
 
         def person_path(options)
