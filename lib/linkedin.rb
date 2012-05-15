@@ -1,9 +1,9 @@
 require 'oauth'
 
 module LinkedIn
-
+  
   class << self
-    attr_accessor :token, :secret, :default_profile_fields
+    attr_accessor :token, :secret, :default_profile_fields, :default_company_fields
 
     # config/initializers/linkedin.rb (for instance)
     #
