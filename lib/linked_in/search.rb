@@ -35,7 +35,7 @@ module LinkedIn
       end
 
       def field_selector(fields)
-        result = ":("
+        result = ":(:people("
         fields = fields.to_a.map do |field|
           if field.is_a?(Hash)
             innerFields = []
@@ -48,7 +48,7 @@ module LinkedIn
           end
         end
         result += fields.join(',')
-        result += ")"
+        result += "))"
         result
       end
   end
