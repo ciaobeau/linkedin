@@ -57,7 +57,7 @@ module LinkedIn
           if options.delete(:public)
             path +=":public"
           elsif fields
-            path +=":(#{fields.map{ |f| f.to_s.gsub("_","-") }.join(',')})"
+            path +=":(#{fields.map{ |f| f.to_s.gsub("_","-") }.join(',')})"  unless options[:email_domain]
           end
           
           if type == "people"
