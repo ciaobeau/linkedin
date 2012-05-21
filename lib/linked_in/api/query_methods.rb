@@ -60,12 +60,14 @@ module LinkedIn
             path +=":(#{fields.map{ |f| f.to_s.gsub("_","-") }.join(',')})"
           end
           
-          headers = options.delete(:headers) || {}
-          params  = options.map { |k,v| "#{k}=#{v}" }.join("&")
-          path   += "?#{params}" if not params.empty?
-
-          if options[:modified] and options[:modified_since]
-            path += "?modified=#{options[:modified]}&modified-since=#{options[:modified_since]}"
+          if type == "people"
+            headers = options.delete(:headers) || {}
+            params  = options.map { |k,v| "#{k}=#{v}" }.join("&")
+            path   += "?#{params}" if not params.empty?
+            
+            if options[:modified] and options[:modified_since]
+              path += "?modified=#{options[:modified]}&modified-since=#{options[:modified_since]}"
+            end
           end
 
           Mash.from_json(get(path))
