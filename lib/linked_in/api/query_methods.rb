@@ -35,6 +35,7 @@ module LinkedIn
       private
       
         def company_path(options)
+          pp options
           path = "/companies"
           if options[:id]
             path += "/id=#{options[:id]}"
