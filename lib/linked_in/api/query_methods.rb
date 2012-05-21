@@ -70,6 +70,7 @@ module LinkedIn
             end
           end
 
+          puts path
           Mash.from_json(get(path))
         end
 
