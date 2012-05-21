@@ -19,8 +19,6 @@ module LinkedIn
       end
 
       def company(options = {})
-        pp options
-        puts 'here'
         path   = company_path(options)
         simple_query(path, options, "companies")
       end
@@ -37,7 +35,6 @@ module LinkedIn
       private
       
         def company_path(options)
-          pp options
           path = "/companies"
           if options[:id]
             path += "/id=#{options[:id]}"
@@ -73,7 +70,6 @@ module LinkedIn
             end
           end
 
-          puts path
           Mash.from_json(get(path))
         end
 
